@@ -208,7 +208,7 @@ angular.module('xc.indexedDB', []).provider('$indexedDB', function() {
                             req.onnotify = function(e) {
                                $rootScope.$apply(function(){
                                     d.notify(e.target.result);
-                                }); 
+                                });
                             }
                             req.onerror = function(e) {
                                 $rootScope.$apply(function(){
@@ -257,7 +257,7 @@ angular.module('xc.indexedDB', []).provider('$indexedDB', function() {
                             req.onnotify = function(e) {
                                $rootScope.$apply(function(){
                                     d.notify(e.target.result);
-                                }); 
+                                });
                             }
                             req.onerror = function(e) {
                                 $rootScope.$apply(function(){
@@ -565,7 +565,7 @@ angular.module('xc.indexedDB', []).provider('$indexedDB', function() {
              * @returns {object} this QueryBuilder, for chaining params
              */
             "$asc": function(unique) {
-                this.result.order = (unique)? NEXTUNIQUE: NEXT;
+                this.result.direction = (unique)? NEXTUNIQUE: NEXT;
                 return this;
             },
             /**
@@ -580,7 +580,7 @@ angular.module('xc.indexedDB', []).provider('$indexedDB', function() {
              * @returns {object} this QueryBuilder, for chaining params
              */
             "$desc": function(unique) {
-                this.result.order = (unique)? PREVUNIQUE: PREV;
+                this.result.direction = (unique)? PREVUNIQUE: PREV;
                 return this;
             },
             /**
